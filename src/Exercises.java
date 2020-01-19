@@ -238,6 +238,6 @@ public class Exercises {
 			prevSame = isSame;
 		}
 		
-		return clumps;		// default return value to ensure compilation
+		return clumps;
 	}
 }
