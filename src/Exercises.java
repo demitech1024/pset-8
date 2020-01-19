@@ -182,7 +182,7 @@ public class Exercises {
 			prevRemainder = remainder;
 		}
 		
-		return false;	// default return value to ensure compilation
+		return false;
 	}
 	
 	public boolean balance(int[] numbers) {
