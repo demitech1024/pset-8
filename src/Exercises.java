@@ -231,6 +231,8 @@ public class Exercises {
 				if (prevSame != true) {
 					clumps++;
 				} 
+			} else {
+				isSame = false;
 			}
 			previous = values[i];
 			prevSame = isSame;
