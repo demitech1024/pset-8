@@ -186,7 +186,26 @@ public class Exercises {
 	}
 	
 	public boolean balance(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 2) {
+			return false;
+		}
+
+		for (int i = 0; i < numbers.length - 1; i++) {
+			int jSum = 0;
+			int kSum = 0;
+
+			for (int j = i; j >= 0; j--) {
+				jSum += numbers[j];
+			}
+
+			for (int k = i + 1; k < numbers.length; k++) {
+				kSum += numbers[k];
+			}
+
+			if (jSum == kSum) {
+				return true;
+			}
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
