@@ -9,7 +9,7 @@ public class Exercises {
 			return true;
 		}
 		
-		return false;	// default return value to ensure compilation
+		return false;
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
@@ -74,7 +74,7 @@ public class Exercises {
 			}
 		}
 		
-		return max;		// default return value to ensure compilation
+		return max;
 	}
 	
 	public String[] middle(String[] values) {
@@ -91,7 +91,7 @@ public class Exercises {
 		int midIndex = (int)(Math.ceil(values.length / 2));
 		String[] returnMe = {values[midIndex - 1], values[midIndex], values[midIndex + 1]};
 		
-		return returnMe;	// default return value to ensure compilation
+		return returnMe;
 	}
 
 	public boolean increasing(int[] numbers) {
@@ -120,7 +120,7 @@ public class Exercises {
 			}
 		}
 		
-		return false;	// default return value to ensure compilation
+		return false;
 	}
 	
 	public boolean everywhere(int[] numbers, int x) {
