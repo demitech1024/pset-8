@@ -207,7 +207,7 @@ public class Exercises {
 			}
 		}
 		
-		return false;	// default return value to ensure compilation
+		return false;
 	}
 	
 	public int clumps(String[] values) {
