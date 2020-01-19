@@ -5,37 +5,120 @@ public class Exercises {
 			return false;
 		}
 		
-		// write your code here
+		if (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]) {
+			return true;
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
+		if (values == null || values.length < n || n <= 0) {
+			return new String[0];
+		}
+
+		String[] returnMe = new String[n * 2];
+		for (int i = 0; i < n; i++) {
+			returnMe[i] = values[i];
+		}
+
+		int index = n;
+		for (int i = values.length - n; i < values.length; i++) {
+			returnMe[index] = values[i];
+			index++;
+		}
 		
-		return null;	// default return value to ensure compilation
+		return returnMe;
 	}
 	
 	public int difference(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 1) {
+			return -1;
+		}
+
+		int max = 0;
+		int min = 0;
+		for (int i = 0; i < numbers.length; i++) {
+			if (i == 0) {
+				min = numbers[i];
+				max = numbers[i];
+			}
+			
+			if (max < numbers[i]) {
+				max = numbers[i];
+			}
+
+			if (min > numbers[i]) {
+				min = numbers[i];
+			}
+		}
 		
-		return -1;		// default return value to ensure compilation
+		return max - min;
 	}
 	
+	
 	public double biggest(double[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3 || numbers.length % 2 == 0) {
+			return -1;
+		}
 		
-		return -1;		// default return value to ensure compilation
+		int midIndex = (int)(Math.ceil(numbers.length / 2));
+		double max = -1;
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] < 0) {
+				return -1;
+			}
+
+			if ((i == 0 || i == numbers.length - 1 || i == midIndex) && numbers[i] > max) {
+				max = numbers[i];
+			}
+		}
+		
+		return max;		// default return value to ensure compilation
 	}
 	
 	public String[] middle(String[] values) {
-		// write your code here
+		if (values == null || values.length < 3 || values.length % 2 == 0) {
+			return new String[0];
+		}
+
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] == null) {
+				return new String[0];
+			}
+		}
+
+		int midIndex = (int)(Math.ceil(values.length / 2));
+		String[] returnMe = {values[midIndex - 1], values[midIndex], values[midIndex + 1]};
 		
-		return null;	// default return value to ensure compilation
+		return returnMe;	// default return value to ensure compilation
 	}
 
 	public boolean increasing(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		int counter = 0;
+		int currentNum = -1;
+		for (int i = 0; i < numbers.length; i++) {
+			if (i == 0) {
+				counter = 1;
+				currentNum = numbers[i];
+			}
+			
+			if (numbers[i] == currentNum + 1) {
+				counter += 1;
+				currentNum = numbers[i];
+			} else {
+				counter = 1;
+				currentNum = numbers[i];
+			}
+
+			if (counter == 3) {
+				return true;
+			}
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
